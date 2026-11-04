@@ -1,6 +1,8 @@
 # Hungerspiele
 
-![Hungerspiele Logo](images/logo.png)
+<img src="images/logo.png"
+alt="Hungerspiele Logo"
+height="200">
 
 Eine browserbasierte Quiz- und Punkte-Spielsteuerung für Hochzeiten und andere Feiern.
 Entwickelt, um "fair" die Reihenfolge am Buffet festzulegen.
