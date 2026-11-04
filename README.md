@@ -3,6 +3,9 @@
 <img src="images/logo.png"
 alt="Hungerspiele Logo"
 height="200">
+
+<p></p>
+
 ![answer.png](images/screenshots/answer.png)
 ![login.png](images/screenshots/login.png)
 ![presenter.png](images/screenshots/presenter.png)
