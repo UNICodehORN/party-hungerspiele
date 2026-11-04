@@ -3,7 +3,10 @@
 <img src="images/logo.png"
 alt="Hungerspiele Logo"
 height="200">
-
+![answer.png](images/screenshots/answer.png)
+![login.png](images/screenshots/login.png)
+![presenter.png](images/screenshots/presenter.png)
+![admin.png](images/screenshots/admin.png)
 Eine browserbasierte Quiz- und Punkte-Spielsteuerung für Hochzeiten und andere Feiern.
 Entwickelt, um "fair" die Reihenfolge am Buffet festzulegen.
 Das Projekt besteht aus einer Spieleransicht, einer Präsentation und einem Admin-Dashboard. 
