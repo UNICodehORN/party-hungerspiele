@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hungerspiele – Mitspielen</title>
+    <link rel="stylesheet" href="css/client.css">
+</head>
+<body>
+
+<header>
+    <h1>Hungerspiele</h1>
+
+    <!-- Teaminfo unter den Logos -->
+    <div id="teamInfo" class="team-info" style="display:none;">
+        <span id="playerTeamName"></span>
+        <span id="teamRank"></span>
+    </div>
+</header>
+
+<main>
+    <!-- Sprach-Overlay -->
+    <div id="langOverlay">
+        <div id="langDialog">
+            <div class="flags">
+                <button type="button" data-lang="de">Deutsch</button>
+                <button type="button" data-lang="pl">Polski</button>
+                <button type="button" data-lang="pt">Português</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ansicht 1: Warten auf Spielbeginn -->
+    <div id="waitingStart" class="view active">
+        <p id="waitingStartText"></p>
+    </div>
+
+    <!-- Ansicht 2: Anmeldung -->
+    <div id="loginView" class="view">
+        <p id="loginInfoText"></p>
+        <form id="loginForm">
+            <input type="text" id="playerName" required>
+            <select id="teamSelect" required>
+            </select>
+            <button type="submit" id="loginButton"></button>
+        </form>
+    </div>
+
+    <!-- Ansicht 3: Wartend / Punkteanzeige -->
+    <div id="waitingRound" class="view">
+        <p id="waitingRoundText"></p>
+        <div class="playerInfo">
+            <h2 id="displayPlayerName"></h2>
+        </div>
+    </div>
+
+    <!-- Ansicht 4: Aktive Runde -->
+    <div id="roundView" class="view">
+        <!-- Datums-Modul -->
+        <form id="roundForm">
+            <label for="roundDate" id="roundDateLabel"></label>
+            <input type="date" id="roundDate" min="2015-01-01" max="" required>
+            <button type="submit" id="roundFormButton"></button>
+        </form>
+
+        <!-- Quiz-Modul -->
+        <div id="quizForm" style="display:none;">
+            <h2 id="quizQuestion"></h2>
+            <div id="quizAnswers"></div>
+        </div>
+
+        <!-- Timer -->
+        <div class="timerBox">
+            <div id="roundTimer"></div>
+            <div id="timerBarContainer" class="timerBarContainer">
+                <div id="roundTimerBar"></div>
+            </div>
+        </div>
+
+        <!-- Rangliste -->
+        <div id="rank" style="display:none;">
+            <div class="rank-block">
+                <strong id="rankTeamLabel"></strong>
+                <span id="pointsTeam"></span>
+                <span id="rankTeam"></span>
+            </div>
+            <hr>
+            <div class="rank-block">
+                <strong id="rankPlayerLabel"></strong>
+                <span id="points"></span>
+                <span id="rankPlayer"></span>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="js/client.js"></script>
+<!-- Sprachwechsel Buttons -->
+<div id="languageSwitcher">
+    <button type="button" data-lang="de" aria-label="Deutsch">DE</button>
+    <button type="button" data-lang="pl" aria-label="Polski">PL</button>
+    <button type="button" data-lang="pt" aria-label="Português">PT</button>
+</div>
+</body>
+</html>

@@ -1,0 +1,300 @@
+/* Grundlayout */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle at center, #591207, #020000);
+    color: #fbdd64;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+/* Container für Logos + Highscore */
+#header-container {
+    display: flex;
+    flex-direction: column;       /* Logos oben, Highscore darunter */
+    align-items: center;          /* alles zentrieren */
+    gap: 1rem;                    /* Abstand zwischen Logos und Highscore */
+    margin-top: 2rem;
+}
+
+/* Logo-Bereich (nebeneinander) */
+#header-container .logo-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;                    /* Abstand zwischen Logos */
+    flex-wrap: wrap;              /* bei kleinen Bildschirmen umbrechen */
+}
+
+#highscore-title {
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #b48013;
+    text-align: center;
+    display: block;
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+/* Highscore-Titel unter dem Projektnamen */
+
+/* Main-Layout */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Content + Highscore untereinander */
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
+    padding-bottom: 2rem;
+}
+
+/* Content-Box */
+.content-box {
+    position: relative;
+    margin-top: 50px;
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    padding: 3rem 4rem;
+    border-radius: 20px;
+    border: 2px solid #fbdd64;
+    box-shadow: 0 0 40px #d5551e;
+    max-width: 70%;
+    overflow: visible;
+}
+
+/* Nur wenn "pulsing"-Klasse dran ist */
+.content-box.pulsing {
+    animation: burnEffect 3s infinite;
+}
+
+/* Flackernde Box Animation */
+@keyframes burnEffect {
+    0% { box-shadow: 0 0 30px #d5551e,0 0 60px #eb952f; transform: translateY(0) scale(1); border-color: #fbdd64; }
+    25% { box-shadow: 0 0 50px #eb952f,0 0 80px #d5551e; transform: translateY(-2px) scale(1.02); border-color: #fbbc3f; }
+    50% { box-shadow: 0 0 70px #fbdd64,0 0 100px #d5551e; transform: translateY(2px) scale(0.98); border-color: #f5651e; }
+    75% { box-shadow: 0 0 50px #eb952f,0 0 80px #d5551e; transform: translateY(-1px) scale(1.01); border-color: #fbbc3f; }
+    100% { box-shadow: 0 0 30px #d5551e,0 0 60px #eb952f; transform: translateY(0) scale(1); border-color: #fbdd64; }
+}
+
+/* Fire-Particles für den Rahmen */
+.fire-border {
+    position: absolute;
+    top: -1em;
+    left: -1em;
+    right: -1em;
+    bottom: -1em;
+    pointer-events: none;
+    overflow: visible;
+    filter: blur(0.02em);
+}
+
+.fire-border .particle {
+    position: absolute;
+    bottom: 0;
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 50%;
+    background: radial-gradient(rgb(255,80,0) 20%, rgba(255,80,0,0) 70%);
+    opacity: 0;
+    animation: rise 1s ease-in infinite;
+}
+
+@keyframes rise {
+    0% { transform: translateY(0) scale(1); opacity: 0; }
+    25% { opacity: 1; }
+    100% { transform: translateY(-3em) scale(0); opacity: 0; }
+}
+
+/* Abbrennen beim Schließen */
+@keyframes burnOut {
+    0% { transform: scale(1); opacity: 1; box-shadow: 0 0 40px #d5551e,0 0 80px #eb952f; border-color: #fbdd64; }
+    50% { transform: scale(0.95) rotate(-2deg); opacity: 0.8; box-shadow: 0 0 70px #fbdd64,0 0 100px #d5551e; border-color: #f5651e; }
+    100% { transform: scale(0) rotate(10deg); opacity: 0; box-shadow: 0 0 0 #000; border-color: transparent; }
+}
+
+.content-box.burning {
+    animation: burnOut 1s forwards;
+}
+
+#highscoreBox {
+    position: fixed;       /* über das gesamte Fenster legen */
+    top: 0;
+    left: 0;
+    width: 100vw;          /* volle Breite */
+    height: 100vh;         /* volle Höhe */
+    background-color: rgba(255, 255, 255, 0.95); /* halbtransparentes Schwarz */
+    color: #000000;           /* Textfarbe Weiß */
+    display: none;         /* standardmäßig ausgeblendet */
+    z-index: 9999;         /* über allen anderen Elementen */
+    overflow-y: auto;      /* falls der Inhalt größer ist als der Bildschirm */
+    padding: 2rem;         /* Abstand zum Rand */
+    text-align: center;    /* Text zentrieren */
+    font-family: sans-serif;
+}
+
+#highscoreBox h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+#highscoreBox ul {
+    list-style: none;
+    padding: 0;
+    font-size: 1.5rem;
+}
+
+#highscoreBox li {
+    margin: 0.5rem 0;
+}
+
+/* Optional: sanftes Einblenden */
+#highscoreBox.show {
+    display: block;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+
+/* Header Logos responsive */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: nowrap;
+}
+
+header img {
+    height: 10vh;
+    max-height: 70px;
+    width: auto;
+    object-fit: contain;
+    flex-shrink: 1;
+    max-width: 45%;
+}
+
+@media (max-width: 600px) {
+    header img {
+        max-height: 50px;
+        max-width: 40%;
+    }
+}
+
+.highscore-list {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.entry {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.1); /* Dark-Theme */
+    border-radius: 50px;
+    padding: 10px 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    font-size: 1.2em;
+    overflow: hidden;
+    color: #000000; /* Textfarbe */
+}
+
+.entry .rank {
+    width: 40px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.4em;
+}
+
+.team-mark {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 0 20px;
+    display: grid;
+    place-items: center;
+    font-weight: bold;
+    color: #fff;
+    background: #591207;
+    border: 3px solid #ccc;
+}
+
+.bar-wrapper {
+    flex: 1;
+    background: rgba(255,255,255,0.15);
+    border-radius: 30px;
+    overflow: hidden;
+    margin-left: 10px;
+}
+
+.bar {
+    height: 100%;
+    min-height: 40px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 20px;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 30px;
+    width: 0; /* wird per JS animiert */
+    transition: width 0.5s ease;
+    background: #4caf50;
+}
+.entry.gold { font-size: 1.4em; }
+.entry.gold .bar { background: #ffd700; color: #000; }
+.entry.gold .team-mark { border-color: #ffd700; }
+
+.entry.silver { font-size: 1.3em; }
+.entry.silver .bar { background: #c0c0c0; color: #000; }
+.entry.silver .team-mark { border-color: #c0c0c0; }
+
+.entry.bronze { font-size: 1.25em; }
+.entry.bronze .bar { background: #cd7f32; color: #fff; }
+.entry.bronze .team-mark { border-color: #cd7f32; }
+.answerBtn {
+    display: inline-block;
+    margin: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000; /* Schwarzer Text für Kontrast */
+    background: linear-gradient(145deg, #fbdd64, #fbbc3f);
+    border: 2px solid #d5551e;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(251, 221, 100, 0.7), 0 0 25px rgba(213, 85, 30, 0.8);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.answerBtn:hover {
+    background: linear-gradient(145deg, #fbbc3f, #fbdd64);
+    box-shadow: 0 0 25px #fbdd64, 0 0 40px #d5551e;
+    transform: scale(1.05);
+}
+
+.answerBtn:disabled {
+    cursor: default;
+    opacity: 0.7;
+    transform: none;
+}

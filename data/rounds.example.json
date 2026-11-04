@@ -1,0 +1,37 @@
+[
+    {
+        "module": "quiz",
+        "intro": "Willkommen zum Beispiel-Quiz!",
+        "intro_pl": "Witamy w przykładowym quizie!",
+        "intro_pt": "Bem-vindo ao quiz de exemplo!",
+        "elements": [
+            {
+                "question": "Was ist die Hauptstadt von Frankreich?",
+                "question_pl": "Jakie jest miasto stołeczne Francji?",
+                "question_pt": "Qual é a capital da França?",
+                "answers": ["Lyon", "Paris", "Marseille"],
+                "answers_pl": ["Lyon", "Paryż", "Marsylia"],
+                "answers_pt": ["Lyon", "Paris", "Marselha"],
+                "correct_answer": 1
+            },
+            {
+                "question": "Wie viel ist 2 + 2?",
+                "question_pl": "Ile wynosi 2 + 2?",
+                "question_pt": "Quanto é 2 + 2?",
+                "answers": ["3", "5", "4"],
+                "answers_pl": ["3", "5", "4"],
+                "answers_pt": ["3", "5", "4"],
+                "correct_answer": 2
+            },
+            {
+                "question": "Welcher Planet wird auch der Rote Planet genannt?",
+                "question_pl": "Która planeta jest nazywana Czerwoną Planetą?",
+                "question_pt": "Qual planeta também é conhecido como Planeta Vermelho?",
+                "answers": ["Mars", "Venus", "Jupiter"],
+                "answers_pl": ["Mars", "Wenus", "Jowisz"],
+                "answers_pt": ["Marte", "Vênus", "Júpiter"],
+                "correct_answer": 0
+            }
+        ]
+    }
+]

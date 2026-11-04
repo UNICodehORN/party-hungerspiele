@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+        <html lang="de">
+        <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hungerspiele – Administration</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+<header>
+    <h1>Hungerspiele – Administration</h1>
+</header>
+
+
+<main class="dashboard">
+    <!-- Spielstatus -->
+    <section class="status">
+        <h2>Spielstatus</h2>
+        <p><strong>Fortschritt:</strong> <span id="progress">Lädt...</span></p>
+        <p><span id="state">Lädt...</span></p>
+        <p><span id="timer">00:00</span></p>
+    </section>
+
+    <!-- Highscore -->
+    <section class="highscore">
+        <h2>Aktueller Highscore</h2>
+        <ol id="highscore-list">
+            <li>1. Tisch 1 – 0 Punkte</li>
+            <li>2. Tisch 2 – 0 Punkte</li>
+            <li>3. Tisch 3 – 0 Punkte</li>
+            <li>4. Tisch 4 – 0 Punkte</li>
+            <li>5. Tisch 5 – 0 Punkte</li>
+            <li>6. Tisch 6 – 0 Punkte</li>
+            <li>7. Tisch 7 – 0 Punkte</li>
+            <li>8. Tisch 8 – 0 Punkte</li>
+            <li>9. Tisch 9 – 0 Punkte</li>
+            <li>10. Tisch 10 – 0 Punkte</li>
+        </ol>
+    </section>
+
+    <!-- Punkteverwaltung -->
+    <section class="points">
+        <h2>Punkte vergeben/abziehen</h2>
+        <form id="pointsForm">
+            <label for="teamSelect">Team:</label>
+            <select id="teamSelect" name="team">
+                <option value="Tisch1">Tisch 1</option>
+                <option value="Tisch2">Tisch 2</option>
+                <option value="Tisch3">Tisch 3</option>
+                <option value="Tisch4">Tisch 4</option>
+                <option value="Tisch5">Tisch 5</option>
+                <option value="Tisch6">Tisch 6</option>
+                <option value="Tisch7">Tisch 7</option>
+                <option value="Tisch8">Tisch 8</option>
+                <option value="Tisch9">Tisch 9</option>
+                <option value="Tisch10">Tisch 10</option>
+            </select>
+
+            <label for="playerSelect">Spieler:</label>
+            <select id="playerSelect" name="player">
+            </select>
+
+            <label for="points">Punkte:</label>
+            <input type="number" id="points" name="points" value="0">
+
+            <button type="submit">Anwenden</button>
+        </form>
+    </section>
+
+    <!-- Steuerung Präsentationsansicht -->
+    <section class="presenter-control">
+        <h2>Präsentation steuern</h2>
+        <button id="nextRound">Nächste Runde starten</button>
+        <button id="highscore">Highscore</button>
+    </section>
+    <section class="presenter-control">
+        <h2>Spiel zurücksetzen</h2>
+        <button id="resetGame">Spiel zurücksetzen</button>
+    </section>
+</main>
+
+<script src="js/admin.js"></script>
+</body>
+</html>
+</title>
+</head>
+<body>
+
+</body>
+</html>

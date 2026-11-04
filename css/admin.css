@@ -1,0 +1,216 @@
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: radial-gradient(circle at center, #591207, #020000);
+    color: #fbdd64;
+    line-height: 1.4;
+    padding: 1rem;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    color: #fbdd64;
+    letter-spacing: 1px;
+}
+
+/* Logos */
+header img {
+    height: 10vh;
+    max-height: 70px;
+    width: auto;
+    object-fit: contain;
+    flex-shrink: 1;
+    max-width: 45%;
+}
+
+/* Mobile Optimierung */
+@media (max-width: 600px) {
+    header img {
+        max-height: 50px;
+        max-width: 40%;
+    }
+}
+
+/* Dashboard Layout */
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Card Style */
+section {
+    background: rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 2px solid #fbdd64;
+    box-shadow: 0 0 30px rgba(213,85,30,0.5);
+    color: #ffffff;
+}
+
+section h2 {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    color: #fbdd64;
+    text-transform: uppercase;
+}
+
+/* Status */
+.status p {
+    margin: 0.5rem 0;
+    color: #ffe79b;
+}
+
+/* Highscore */
+.highscore ol {
+    list-style: none;
+    padding-left: 0;
+}
+
+.highscore li {
+    padding: 0.6rem 0.8rem;
+    border-bottom: 1px solid rgba(251,221,100,0.3);
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.highscore li:nth-child(1) {
+    color: #ffd700; /* Gold */
+    font-size: 1.1rem;
+}
+
+.highscore li:nth-child(2) {
+    color: #c0c0c0; /* Silber */
+}
+
+.highscore li:nth-child(3) {
+    color: #cd7f32; /* Bronze */
+}
+
+/* Punkteverwaltung */
+form {
+    display: grid;
+    gap: 0.8rem;
+}
+
+form label {
+    font-size: 0.9rem;
+    color: #fbdd64;
+}
+
+form select,
+form input[type="number"] {
+    padding: 0.6rem;
+    border: 1px solid #fbdd64;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+}
+
+form button {
+    padding: 0.8rem;
+    background: linear-gradient(145deg, #d5551e, #eb952f);
+    color: #1a0a00;
+    border: 1px solid #fbdd64;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+form button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0 18px #fbdd64, 0 0 28px #d5551e;
+}
+
+/* Presenter Control */
+.presenter-control {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.presenter-control button {
+    padding: 0.9rem 1.4rem;
+    background: linear-gradient(145deg, #d5551e, #eb952f);
+    color: #1a0a00;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 2px solid #fbdd64;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.presenter-control button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 22px #fbdd64, 0 0 36px #d5551e;
+}
+
+/* Reset-Button */
+.presenter-control #resetGame {
+    background: linear-gradient(145deg, #e74c3c, #c0392b);
+    color: #fff;
+    border: 2px solid #fbdd64;
+}
+
+.presenter-control #resetGame:hover {
+    box-shadow: 0 0 20px #fbdd64, 0 0 32px #e74c3c;
+    transform: scale(1.05);
+}
+
+/* Zustand */
+#state {
+    display: inline-block;
+    background: rgba(255,255,255,0.08);
+    border: 2px solid #fbbc3f;
+    border-radius: 10px;
+    padding: 0.6rem 1rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #fbdd64;
+    margin-top: 0.5rem;
+}
+
+/* Timer */
+#timer {
+    display: inline-block;
+    background: rgba(255,255,255,0.08);
+    border: 2px solid #fbdd64;
+    border-radius: 12px;
+    padding: 0.8rem 1.2rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 0.5rem;
+}
+
+/* Disabled Buttons */
+#nextRound:disabled,
+#highscore:disabled {
+    background: #555;
+    color: #aaa;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
